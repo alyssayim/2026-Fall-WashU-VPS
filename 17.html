@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowood Menu</title>
+
+    <style>
+
+body {
+  font-family: "Palatino Linotype", Palatino, serif;
+  background-color: #d4d0c0;
+  color: #283e30;
+  margin: 0px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  background-color: #b1ad9e84;
+  padding: 15px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+.menu {
+  max-width: 1000px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.procreate-drawing {
+    width: 600px;
+    height: auto;
+    display: block;
+
+    margin: 50px auto;
+    transform: translateX(5px);
+}
+
+
+.item,
+.sandwich {
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.item:hover,
+.sandwich:hover {
+    background-color: #b1ac9b85;
+    border-left: 3px solid #294332;
+    transform: translateX(6px);
+}
+
+
+.column.sides p {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.column.sides p:hover {
+    background-color: #b1ac9b85;
+    border-left: 3px solid #294332;
+    transform: translateX(6px);
+}
+
+
+.section-title {
+    background-color: transparent;
+    border-top: 2px solid #294332;
+    border-bottom: 2px solid #294332;
+    padding: 12px 15px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+    background-color: #223228;
+}
+
+.nav-logo {
+    width: 50px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #b1ac9b85;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+}
+header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.menu {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+footer p {
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 10px 20px;
+    transition: all 0.25s ease;
+}
+
+footer p:hover {
+    background-color: #b1ac9b85;
+    transform: translateX(8px);
+}
+.column.sides {
+    background-color: #c6c1b1;
+    padding: 20px;
+}
+
+.column.sides {
+    box-shadow: 5px 5px 0px #294332;
+}
+
+.hours {
+    display: inline-block;
+    border: 1px solid #294332;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+ </style>
+</head>
+
+<body>
+  <nav class="topbar">
+
+    <img class="nav-logo" src="logo.png" alt="Bowood logo">
+
+    <div class="nav-links">
+        <a href="#menu">MENU</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+</nav>
+<img class="procreate-drawing" src="BowoodDrawing.png" alt="Bowood drawing">
+
+  <header>
+    <p>
+      <em>Bowood at 4605 Olive St., St. Louis, MO 63108</em>
+    </p>
+  </header>
+
+
+<main class="menu" id="menu">
+
+    <div class="section-title">
+      <h2>Breakfast & Lunch</h2>
+    </div>
+
+    <span class="hours">DAILY 8am–2pm</span>
+
+
+    <div class="columns">
+
+      <div class="column">
+
+        <div class="item">
+          <h3>crab cake benedict — $26</h3>
+          <p>crab cakes, poached eggs, hollandaise, chili flakes, mixed greens salad </p>
+        </div>
+
+        <div class="item">
+          <h3>brioche bread pudding — $18</h3>
+          <p>whipped cream, maple syrup</p>
+        </div>
+
+        <div class="item">
+          <h3>cheddar waffle — $15</h3>
+          <p>vermont cheddar, maldon salt, butter</p>
+        </div>
+
+        <div class="item">
+          <h3>eggs benedict — $20</h3>
+          <p>english muffin, ham, poached eggs, herb hollandaise, chives, potatoes, mixed greens salad</p>
+        </div>
+
+        <div class="item">
+          <h3>cacio e pepe eggs — $18</h3>
+          <p>soft scramble with pecorino &amp; black pepper, sourdough toast, mixed greens salad</p>
+        </div>
+
+        <div class="item">
+          <h3>egg toast — $18</h3>
+          <p>brioche toast, soft scrambled eggs, crispy bacon, crème fraîche, chive oil</p>
+        </div>
+
+        <div class="item">
+          <h3>buttermilk pancakes — $15</h3>
+          <p>powdered sugar, butter, maple syrup (topping options: blueberries or chocolate chips +2)</p>
+        </div>
+
+        <div class="item">
+          <h3>classic breakfast — $18</h3>
+          <p>two eggs, brioche toast, potatoes, bacon</p>
+        </div>
+
+        <div class="item">
+          <h3>oatmeal — $8</h3>
+          <p>steel cut oats, quinoa, buckwheat, oat milk, maple syrup, salted butter</p>
+        </div>
+
+      </div>
+
+
+      <div class="column sides">
+
+        <h2>SIDES</h2>
+
+        <p>bacon — $6</p>
+        <p>breakfast potatoes — $6</p>
+        <p>fries — $7</p>
+        <p>two eggs — $6</p>
+        <p>pork sausage — $8</p>
+        <p>vegan sausage — $10</p>
+        <p>fruit bowl — $6</p>
+        <p>mixed greens salad — $4</p>
+        <p>toast — $3</p>
+        <p>sourdough toast — $5</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="section-title">
+      <h2>Sandwiches</h2>
+    </div>
+
+    <div class="sandwich">
+      <h3>Breakfast Sandwich — $17</h3>
+      <p><em>brioche, scrambled eggs, bacon, gruyere, pickled pepper aioli</em></p>
+    </div>
+
+    <div class="sandwich">
+      <h3>Breakfast Burrito — $17</h3>
+      <p><em>flour tortilla, scrambled egg, housemade chorizo, crispy potato, bell pepper, onion, avocado crema, chihuahua cheese, tomatillo salsa</em></p>
+    </div>
+
+    <div class="sandwich">
+      <h3>Bowood Burger — $20</h3>
+      <p><em>potato roll, double smashed patty, american cheese, onion, pickle, house bowood sauce, fries</em></p>
+    </div>
+
+    <div class="sandwich">
+      <h3>Summer BLT — $20</h3>
+      <p><em>smoked bacon, heirloom tomato and arugula, with corn mayo on multigrain toast, fries</em></p>
+    </div>
+
+    <div class="sandwich">
+      <h3>Green Goddess Chicken Sandwich — $17</h3>
+      <p><em>hoagie, oven roasted chicken, avocado &amp; herb dressing, lettuce, burrata, fries</em></p>
+    </div>
+
+
+    <div class="section-title">
+      <h2>Salads & More</h2>
+    </div>
+
+    <div class="columns">
+
+      <div class="column">
+
+        <div class="item">
+          <h3>st. louis caesar — $13 / 17</h3>
+          <p>romaine lettuce, creamy anchovy dressing, pecorino, garlic crunch, lemon</p>
+        </div>
+
+        <div class="item">
+          <h3>italian chopped — $15 / 19</h3>
+          <p>roma crunch, genoa salami, pearl mozzarella, red onion, pickled banana pepper, olive, cherry tomato, creamy italian dressing</p>
+        </div>
+
+        <div class="item">
+          <h3>garden grain salad — $15</h3>
+          <p>marinated wheat berries &amp; quinoa, heirloom cherry tomato, pickled peppers, roasted corn, arugula, white balsamic vin, crispy shallots</p>
+        </div>
+
+        <div class="item">
+          <h3>minestrone — $10 / 17</h3>
+          <p>tomato, onion, carrot, celery, ditalini noodle, pecorino, basil, parsley</p>
+        </div>
+
+      </div>
+
+
+      <div class="column sides">
+
+        <h2>ADD-ONS</h2>
+
+        <p>cold-smoked salmon (+5)</p>
+        <p>chicken (+5)</p>
+        <p>bacon (+3)</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="section-title">
+      <h2>Pastries</h2>
+    </div>
+
+    <div class="pastries">
+
+      <h3>Housemade Pastries</h3>
+      <p><em>*with limited quantity</em></p>
+
+      <h3>Pistachio Brown Butter Tea Cake — $4</h3>
+
+      <h3>Gluten-free Blueberry Muffin — $5</h3>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <h2>Niche Food Group</h2>
+
+    <h4>
+      BRASSERIE BY NICHE |
+      FORDO’S KILLER PIZZA |
+      KITCHEN BAR |
+      NONE OF THE ABOVE |
+      PASTARIA DELI &amp; WINE |
+      PASTARIA |
+      EVENTS BY NICHE
+    </h4>
+
+    <p>▷ <em>Accessibility</em></p>
+    <p>▷ <em>Privacy Policy</em></p>
+    <p>▷ <em>Join Our Mailing List</em></p>
+
+  </footer>
+
+</body>
+</html>
+

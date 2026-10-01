@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bowood Menu</title>
+
+  <style>
+
+    body {
+      background-color: #e8e2d9;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+      margin: 0;
+      color: #243524;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+    }
+
+    header h1 {
+      font-size: 60px;
+      letter-spacing: 12px;
+      margin-bottom: 10px;
+
+      display: inline-block;
+      border-bottom: 2px solid #476547;
+      padding-bottom: 10px;
+    }
+
+    header p {
+      margin: 6px;
+      letter-spacing: 2px;
+    }
+
+    .menu {
+      width: 85%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-title {
+      background-color: rgba(216, 201, 181, 0.903);
+
+      padding: 15px 20px;
+      margin-top: 40px;
+
+      border-top: 1px solid #476547;
+      border-bottom: 3px solid #476547;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .hours {
+      display: inline-block;
+
+      background-color: #d96a21;
+      color: #f4eee5;
+
+      padding: 7px 15px;
+      border-radius: 20px;
+
+      margin: 15px 0 25px 0;
+
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .columns {
+      display: flex;
+      gap: 60px;
+    }
+
+    .column {
+      width: 50%;
+    }
+
+
+    .item,
+    .sandwich {
+      text-align: left;
+
+      padding: 20px;
+      margin-bottom: 30px;
+
+      border-left: 3px solid transparent;
+
+      transition: all 0.25s ease;
+    }
+
+    .item:hover,
+    .sandwich:hover {
+      background-color: #ded5c8;
+
+      border-left: 3px solid #476547;
+
+      transform: translateX(5px);
+    }
+
+    h3 {
+      margin-bottom: 4px;
+      text-transform: lowercase;
+
+      transition: color 0.25s ease;
+    }
+
+    h3:hover {
+      color: #d96a21;
+    }
+
+    .item p {
+      margin-top: 0;
+      margin-bottom: 25px;
+
+      line-height: 1.5;
+
+      color: #4d5c4d;
+    }
+
+    .sides {
+      padding: 25px;
+
+      background-color: #ded5c8;
+
+      border: 1px solid #678767;
+
+      text-align: left;
+    }
+
+    .sides h2 {
+      margin-top: 0;
+
+      letter-spacing: 3px;
+
+      border-bottom: 2px solid #476547;
+
+      padding-bottom: 10px;
+    }
+
+    .sides p {
+      border-bottom: 1px solid #678767;
+
+      padding: 8px 5px;
+
+      transition: all 0.25s ease;
+    }
+
+    .sides p:hover {
+      background-color: #d1c7b8;
+
+      padding-left: 12px;
+    }
+
+
+    .sandwich {
+      margin-bottom: 25px;
+    }
+
+    .sandwich h3 {
+      margin-bottom: 5px;
+    }
+
+    .sandwich p {
+      margin-top: 0;
+
+      line-height: 1.5;
+
+      color: #4d5c4d;
+    }
+
+
+    .pastries {
+      text-align: left;
+
+      padding: 25px;
+
+      margin-bottom: 40px;
+
+      border-left: 3px solid #476547;
+
+      background-color: #ded5c8;
+    }
+
+
+    footer {
+      margin-top: 60px;
+
+      background-color: #243524;
+
+      color: #e8e2d9;
+
+      text-align: center;
+
+      padding: 45px 30px;
+    }
+
+    footer h2 {
+      letter-spacing: 3px;
+    }
+
+    footer h4 {
+      line-height: 2;
+      letter-spacing: 1px;
+    }
+
+    footer p {
+      display: block;
+
+      width: fit-content;
+
+      margin: 15px auto;
+
+      padding: 8px 15px;
+
+      transition: all 0.25s ease;
+    }
+
+    footer p:hover {
+      background-color: #e8e2d9;
+
+      color: #243524;
+
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 700px) {
+
+      .columns {
+        display: block;
+      }
+
+      .column {
+        width: 100%;
+      }
+
+      header h1 {
+        font-size: 38px;
+        letter-spacing: 7px;
+      }
+
+      .menu {
+        width: 90%;
+      }
+
+    }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(
+    180deg,
+    #e8e2d9 0%,
+    #eee9e1 50%,
+    #e8e2d9 100%
+  );
+}
+
+header h1 {
+  transition: all 0.3s ease;
+}
+
+header h1:hover {
+  letter-spacing: 16px;
+  color: #d96a21;
+}
+
+.section-title {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.section-title:hover {
+  background-color: #243524;
+  color: #e8e2d9;
+}
+
+.section-title h2 {
+  transition: transform 0.3s ease;
+}
+
+.section-title:hover h2 {
+  transform: scale(1.03);
+}
+
+.item,
+.sandwich {
+  border-radius: 4px;
+  position: relative;
+}
+
+.item:hover,
+.sandwich:hover {
+  background-color: #f1ece4;
+  box-shadow: 0 8px 20px rgba(36, 53, 36, 0.12);
+  transform: translateY(-4px);
+}
+
+.item::after,
+.sandwich::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #d96a21;
+  margin-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.item:hover::after,
+.sandwich:hover::after {
+  width: 100%;
+}
+
+.item h3,
+.sandwich h3 {
+  letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+
+.item:hover h3,
+.sandwich:hover h3 {
+  letter-spacing: 2px;
+}
+
+.hours {
+  box-shadow: 0 4px 10px rgba(36, 53, 36, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hours:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(36, 53, 36, 0.25);
+}
+
+.sides {
+  box-shadow: 8px 8px 0 rgba(71, 101, 71, 0.25);
+  transition: all 0.3s ease;
+}
+
+.sides:hover {
+  box-shadow: 12px 12px 0 rgba(71, 101, 71, 0.35);
+  transform: translate(-3px, -3px);
+}
+
+.sides p {
+  transition: all 0.25s ease;
+}
+
+.sides p:hover {
+  color: #d96a21;
+  padding-left: 15px;
+}
+
+.pastries {
+  transition: all 0.3s ease;
+}
+
+.pastries:hover {
+  background-color: #f1ece4;
+  box-shadow: 0 8px 20px rgba(36, 53, 36, 0.12);
+}
+
+footer p {
+  border: 1px solid transparent;
+}
+
+footer p:hover {
+  border: 1px solid #e8e2d9;
+  letter-spacing: 1px;
+}
+
+::selection {
+  background-color: #d96a21;
+  color: #ffffff;
+}
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+
+    <h1>BOWOOD</h1>
+
+    <p>BY NICHE</p>
+
+    <p>ST. LOUIS, MISSOURI</p>
+
+    <p>
+      <em>Bowood at 4605 Olive St., St. Louis, MO 63108</em>
+    </p>
+
+  </header>
+
+
+
+  <main class="menu">
+
+
+    <div class="section-title">
+      <h2>Breakfast & Lunch</h2>
+    </div>
+
+    <span class="hours">DAILY 8am–2pm</span>
+
+
+
+    <div class="columns">
+
+
+      <div class="column">
+
+
+        <div class="item">
+
+          <h3>crab cake benedict</h3>
+
+          <p>
+            crab cakes, poached eggs, hollandaise,
+            chili flakes, mixed greens salad — $26
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>brioche bread pudding</h3>
+
+          <p>
+            whipped cream, maple syrup — $18
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>cheddar waffle</h3>
+
+          <p>
+            vermont cheddar, maldon salt, butter — $15
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>eggs benedict</h3>
+
+          <p>
+            english muffin, ham, poached eggs,
+            herb hollandaise, chives, potatoes,
+            mixed greens salad — $20
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>cacio e pepe eggs</h3>
+
+          <p>
+            soft scramble with pecorino &amp; black pepper,
+            sourdough toast, mixed greens salad — $18
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>egg toast</h3>
+
+          <p>
+            brioche toast, soft scrambled eggs,
+            crispy bacon, crème fraîche, chive oil — $18
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>buttermilk pancakes</h3>
+
+          <p>
+            powdered sugar, butter, maple syrup
+            (topping options: blueberries or chocolate chips +2) — $15
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>classic breakfast</h3>
+
+          <p>
+            two eggs, brioche toast, potatoes, bacon
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>oatmeal</h3>
+
+          <p>
+            steel cut oats, quinoa, buckwheat,
+            oat milk, maple syrup, salted butter — $8
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="column sides">
+
+        <h2>SIDES</h2>
+
+        <p>bacon — $6</p>
+
+        <p>breakfast potatoes — $6</p>
+
+        <p>fries — $7</p>
+
+        <p>two eggs — $6</p>
+
+        <p>pork sausage — $8</p>
+
+        <p>vegan sausage — $10</p>
+
+        <p>fruit bowl — $6</p>
+
+        <p>mixed greens salad — $4</p>
+
+        <p>toast — $3</p>
+
+        <p>sourdough toast — $5</p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="section-title">
+      <h2>Sandwiches</h2>
+    </div>
+
+
+
+    <div class="sandwich">
+
+      <h3>Breakfast Sandwich | $17</h3>
+
+      <p>
+        <em>
+          brioche, scrambled eggs, bacon,
+          gruyere, pickled pepper aioli
+        </em>
+      </p>
+
+    </div>
+
+
+
+    <div class="sandwich">
+
+      <h3>Breakfast Burrito | $17</h3>
+
+      <p>
+        <em>
+          flour tortilla, scrambled egg,
+          housemade chorizo, crispy potato,
+          bell pepper, onion, avocado crema,
+          chihuahua cheese, tomatillo salsa
+        </em>
+      </p>
+
+    </div>
+
+
+
+    <div class="sandwich">
+
+      <h3>Bowood Burger | $20</h3>
+
+      <p>
+        <em>
+          potato roll, double smashed patty,
+          american cheese, onion, pickle,
+          house bowood sauce, fries
+        </em>
+      </p>
+
+    </div>
+
+
+
+    <div class="sandwich">
+
+      <h3>Summer BLT | $20</h3>
+
+      <p>
+        <em>
+          smoked bacon, heirloom tomato and arugula,
+          with corn mayo on multigrain toast, fries
+        </em>
+      </p>
+
+    </div>
+
+
+
+    <div class="sandwich">
+
+      <h3>Green Goddess Chicken Sandwich | $17</h3>
+
+      <p>
+        <em>
+          hoagie, oven roasted chicken,
+          avocado &amp; herb dressing,
+          lettuce, burrata, fries
+        </em>
+      </p>
+
+    </div>
+
+
+
+    <div class="section-title">
+      <h2>Salads & More</h2>
+    </div>
+
+
+
+    <div class="columns">
+
+
+      <div class="column">
+
+
+        <div class="item">
+
+          <h3>st. louis caesar</h3>
+
+          <p>
+            romaine lettuce, creamy anchovy dressing,
+            pecorino, garlic crunch, lemon — $13 / 17
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>italian chopped</h3>
+
+          <p>
+            roma crunch, genoa salami, pearl mozzarella,
+            red onion, pickled banana pepper, olive,
+            cherry tomato, creamy italian dressing — $15 / 19
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>garden grain salad</h3>
+
+          <p>
+            marinated wheat berries &amp; quinoa,
+            heirloom cherry tomato, pickled peppers,
+            roasted corn, arugula, white balsamic vin,
+            crispy shallots — $15
+          </p>
+
+        </div>
+
+
+        <div class="item">
+
+          <h3>minestrone</h3>
+
+          <p>
+            tomato, onion, carrot, celery,
+            ditalini noodle, pecorino,
+            basil, parsley — $10 / 17
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="column sides">
+
+        <h2>ADD-ONS</h2>
+
+        <p>cold-smoked salmon (+5)</p>
+
+        <p>chicken (+5)</p>
+
+        <p>bacon (+3)</p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="section-title">
+      <h2>Pastries</h2>
+    </div>
+
+
+
+    <div class="pastries">
+
+      <h3>Housemade Pastries</h3>
+
+      <p>
+        <em>*with limited quantity</em>
+      </p>
+
+      <h3>
+        Pistachio Brown Butter Tea Cake | $4
+      </h3>
+
+      <h3>
+        Gluten-free Blueberry Muffin | $5
+      </h3>
+
+    </div>
+
+
+  </main>
+
+
+
+  <footer>
+
+    <h2>Niche Food Group</h2>
+
+    <h4>
+      BRASSERIE BY NICHE |
+      FORDO’S KILLER PIZZA |
+      KITCHEN BAR |
+      NONE OF THE ABOVE |
+      PASTARIA DELI &amp; WINE |
+      PASTARIA |
+      EVENTS BY NICHE
+    </h4>
+
+    <p>▷ <em>Accessibility</em></p>
+
+    <p>▷ <em>Privacy Policy</em></p>
+
+    <p>▷ <em>Join Our Mailing List</em></p>
+
+  </footer>
+
+
+</body>
+
+</html>
