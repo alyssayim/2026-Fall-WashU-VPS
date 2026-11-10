@@ -1,29 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opening</title>
+    <title>Evidence Board</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main id="screen">
-    <p id="text"></p>
+    <audio id="bg-audio" src="audio/ambient.mp3" loop></audio>
+    <audio id="click-audio" src="audio/click.mp3"></audio>
 
-   <div id="gallery">
-    <img src="images/image1.png" data-next="images/animated.gif" alt="Image 1">
-    <img src="images/image2.png" data-next="images/image5.jpg" alt="Image 2">
-    <img src="images/image3.png" data-next="images/image6.jpg" alt="Image 3">
-</div>
+    <main id="main-container">
+        <div id="background"></div>
+        <div id="dark-overlay"></div>
 
-<div id="image-screen">
-    <button id="back-button">← Back</button>
-    <img id="selected-image" alt="Selected image">
-</div>
-</main>
+        <div id="intro-layer">
+            <p id="typewriter-text"></p>
+        </div>
+
+        <div id="gallery-layer">
+            <img class="float-img"
+                 src="images/img1.png"
+                 data-hover="images/img1_hover.png"
+                 data-full="images/img1_full.jpg"
+                 style="top: 15%; left: 18%; width: 280px; rotate: -8deg;">
+
+            <img class="float-img"
+                 src="images/img2.png"
+                 data-hover="images/img2_hover.png"
+                 data-full="images/img2_full.jpg"
+                 style="top: 22%; left: 42%; width: 350px; rotate: 5deg;">
+
+            <img class="float-img"
+                 src="images/img3.png"
+                 data-hover="images/img3_hover.png"
+                 data-full="images/img3_full.jpg"
+                 style="top: 15%; left: 68%; width: 290px; rotate: -10deg;">
+
+            <img class="float-img"
+                 src="images/img4.png"
+                 data-hover="images/img4_hover.png"
+                 data-full="images/img4_full.jpg"
+                 style="top: 52%; left: 12%; width: 300px; rotate: 12deg;">
+
+            <img class="float-img"
+                 src="images/img5.png"
+                 data-hover="images/img5_hover.png"
+                 data-full="images/img5_full.jpg"
+                 style="top: 58%; left: 40%; width: 270px; rotate: -6deg;">
+
+            <img class="float-img"
+                 src="images/img6.png"
+                 data-hover="images/img6_hover.png"
+                 data-full="images/img6_full.jpg"
+                 style="top: 52%; left: 68%; width: 260px; rotate: 15deg;">
+        </div>
+    </main>
+
+    <div id="fullscreen-overlay">
+        <button id="close-btn">X Close</button>
+        <img id="full-image" alt="Full View">
+    </div>
 
     <script src="script.js"></script>
 </body>

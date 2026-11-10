@@ -1,68 +1,106 @@
+
 const lines = [
     "Hello.",
     "Are you the doctor?",
-    "Three people died, but it's dead now.",
-    "Here's what's left of the remains..."
+    "Three people died...",
+    "But it's dead now.",
+    "Here's what's left of the remains."
 ];
 
-const text = document.getElementById("text");
-const screen = document.getElementById("screen");
+const textElement = document.getElementById("typewriter-text");
+const introLayer = document.getElementById("intro-layer");
+const galleryLayer = document.getElementById("gallery-layer");
+const background = document.getElementById("background");
+const bgAudio = document.getElementById("bg-audio");
+const clickAudio = document.getElementById("click-audio");
+const overlay = document.getElementById("fullscreen-overlay");
+const fullImage = document.getElementById("full-image");
+const closeBtn = document.getElementById("close-btn");
+const floatImages = document.querySelectorAll(".float-img");
 
 let lineIndex = 0;
-let typing = false;
+let isTyping = false;
 
-function typeText(message) {
-    text.textContent = "";
-    typing = true;
+function typeLine(text) {
+    isTyping = true;
+    textElement.textContent = "";
 
     let charIndex = 0;
 
     const interval = setInterval(() => {
-        text.textContent += message[charIndex];
+        textElement.textContent += text[charIndex];
         charIndex++;
 
-        if (charIndex >= message.length) {
+        if (charIndex === text.length) {
             clearInterval(interval);
-            typing = false;
+            isTyping = false;
         }
-    }, 60);
+    }, 50);
 }
 
-screen.addEventListener("click", () => {
-    if (typing) return;
+typeLine(lines[0]);
+
+introLayer.addEventListener("click", () => {
+    if (isTyping) return;
+
+    clickAudio.currentTime = 0;
+    clickAudio.play().catch(() => {});
+
+    lineIndex++;
 
     if (lineIndex < lines.length) {
-        typeText(lines[lineIndex]);
-        lineIndex++;
+        typeLine(lines[lineIndex]);
     } else {
-        text.style.display = "none";
-        gallery.style.display = "block";
+        startGallery();
     }
 });
 
-const gallery = document.getElementById("gallery");
+function startGallery() {
+    introLayer.style.opacity = "0";
+    introLayer.style.pointerEvents = "none";
 
-const imageScreen = document.getElementById("image-screen");
-const selectedImage = document.getElementById("selected-image");
+    setTimeout(() => {
+        introLayer.style.display = "none";
+        galleryLayer.style.display = "block";
 
-document.querySelectorAll("#gallery img").forEach(image => {
-    image.addEventListener("click", (event) => {
-        event.stopPropagation();
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                background.classList.add("visible");
+                galleryLayer.classList.add("visible");
+            });
+        });
 
-        selectedImage.src = image.dataset.next;
+        bgAudio.volume = 0.3;
+        bgAudio.play().catch(() => {});
+    }, 1000);
+}
 
-        gallery.style.display = "none";
-        imageScreen.style.display = "flex";
+floatImages.forEach(img => {
+    const originalSrc = img.getAttribute("src");
+    const hoverSrc = img.dataset.hover;
+
+    img.addEventListener("mouseenter", () => {
+        img.src = hoverSrc;
+    });
+
+    img.addEventListener("mouseleave", () => {
+        img.src = originalSrc;
+    });
+
+    img.addEventListener("click", () => {
+        fullImage.src = img.dataset.full;
+        overlay.style.display = "flex";
     });
 });
 
-const backButton = document.getElementById("back-button");
-
-backButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-
-    imageScreen.style.display = "none";
-    selectedImage.removeAttribute("src");
-    gallery.style.display = "block";
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+    fullImage.src = "";
 });
 
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        overlay.style.display = "none";
+        fullImage.src = "";
+    }
+});
